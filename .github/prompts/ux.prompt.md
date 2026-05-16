@@ -72,6 +72,10 @@ Before routing, check whether `.interface-design/system.md` exists in the projec
 | Design review rubric / weighted score / Critical Major Minor finding | `ux-design-system` |
 | React cva forwardRef / Next.js Server Components / SwiftUI Asset Catalogs | `ux-design-system` |
 | Form design rules / empty loading error states / progressive disclosure | `ux-design-system` |
+| `baseline-ui` / enforce Tailwind constraints / component primitives / animation constraints | `ux-implementation` |
+| `fixing-accessibility` / ARIA labels / keyboard nav fix / focus management / WCAG fix | `ux-implementation` |
+| SEO metadata / Open Graph / canonical URL / JSON-LD / social cards / favicons | `ux-implementation` |
+| Animation performance / layout thrashing / compositor properties / scroll-linked / will-change | `ux-implementation` |
 
 ## Multi-Intent Requests
 
