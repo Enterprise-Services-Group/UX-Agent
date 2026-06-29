@@ -4,7 +4,8 @@ description: >
   Multi-phase UX orchestration system. Plans the approach, dispatches specialist agents
   in parallel where possible, runs mandatory quality audits, and iterates until the
   quality bar is met. Use for any design task: create UI, audit usability, design system,
-  user research, content design, motion design, service design. This agent does not
+  user research, content design, motion design, service design, sketch/variations
+  exploration, AI-pattern copy audit, humanizer pass. This agent does not
   produce design output directly — it orchestrates specialists through a 3-phase pipeline.
 tools: [agent, read, search, web, todo]
 ---

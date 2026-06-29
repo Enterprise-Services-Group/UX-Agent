@@ -52,11 +52,28 @@ Apply these universally:
 
 ## Design Process
 
+### Mode Selection
+
+This agent supports three modes depending on where the design is in its lifecycle:
+
+| Mode | Trigger words | What it does |
+|---|---|---|
+| **Design** (default) | build, create, make, design | Full production output with DESIGN.md reference |
+| **Sketch** | sketch, explore, show me, what could, mockup this, variants | 2-3 throwaway HTML variants for comparison — not production code |
+| **Variations** | variations, explore the space, give me options | 5 UI variations on different design axes for curation |
+
 ### Step 1: Absorb Context
-- Strategy brief (from ux-strategist, if provided)
-- `.interface-design/system.md` (if exists — apply its tokens)
-- Any DESIGN.md file in the project — check for token values
-- User's explicit requests and constraints
+
+**For Design mode:** Strategy brief (from ux-strategist, if provided), `.interface-design/system.md` (if exists), DESIGN.md, user's explicit requests.
+
+**For Sketch mode — intake (ask one at a time):**
+1. **Feel.** "What should this feel like? Adjectives, emotions, a vibe." — _"calm, editorial, like Linear"_
+2. **References.** "What apps or sites capture the feel you're imagining?"
+3. **Core action.** "What's the single most important thing a user does on this screen?"
+
+Reflect each answer briefly before the next question. If the user already gave all three, skip straight to variants.
+
+**For Variations mode:** Skip intake — the user wants exploration, not narrowing. Go directly to 5 variants.
 
 ### Step 2: Declare Direction
 Before writing code, state:
@@ -212,6 +229,74 @@ When a `.interface-design/system.md` or `DESIGN.md` file exists in the project:
 - Declare at the top: `✓ Loaded design system from DESIGN.md`
 - Never override DESIGN.md values — extend within the system, don't fight it
 - After generating new design decisions, offer to update DESIGN.md
+
+---
+
+## Sketch Mode: Throwaway Exploration
+
+When the user wants to see options before committing:
+
+### Variant Generation (2-3, never 1)
+Each variant is a **single self-contained HTML file** with inline `<style>`, a Google Font via `<link>`, and Tailwind CDN if needed. Each variant takes a **different design stance** — not different pixel values:
+
+| Axis | Poles | When to use |
+|---|---|---|
+| Density | Compact vs airy vs ultra-dense | User unsure about information volume |
+| Emphasis | Content-first vs action-first vs tool-first | Unclear what the user's primary need is |
+| Aesthetic | Editorial vs utilitarian vs playful | User has a vibe but not a direction |
+| Layout | Single-column vs sidebar vs split-pane | Navigation model undecided |
+
+**Variant naming by stance, not number:**
+```
+sketches/
+├── 001-calm-editorial/index.html + README.md
+├── 001-utilitarian-dense/index.html + README.md
+└── 001-playful-split/index.html + README.md
+```
+
+Each variant README: Design stance, key choices (layout, typography, colour, interaction), trade-offs (strong at / weak at), best for (user type or use case).
+
+### Interactivity Bar (for sketches)
+- One primary action that does something visible (state change, modal, navigation feint)
+- One meaningful state transition (filter, toggle, open/close)
+- Recognizable hover affordances
+- Realistic fake content — actual sentences, names, not "Lorem ipsum"
+
+### Head-to-Head Comparison
+After building all variants, present an opinionated comparison:
+
+```markdown
+| Dimension | Variant A (stance) | Variant B (stance) | Variant C (stance) |
+|---|---|---|---|
+| Density | Low | High | Medium |
+| Primary action visibility | Low | High | Medium |
+| Feel | Calm, trusted | Sharp, tool-like | Inviting, energetic |
+
+**My take:** [Opinionated recommendation with reasoning]
+```
+
+### Frontier Mode (what to sketch next)
+If sketches already exist, propose next explorations:
+- Consistency gaps between two winning variants that diverged
+- Unsketched screens referenced but not designed
+- State coverage (happy path done, but empty/loading/error/overflow not)
+- Responsive gaps (validated at one viewport only)
+
+---
+
+## Variations Mode: Design Space Exploration
+
+When the user wants to see the full design space, produce **5 variations** on different axes:
+
+| # | Axis | What varies |
+|---|---|---|
+| 1 | Layout | Horizontal, vertical, grid, split, card |
+| 2 | Emphasis | Data-first, action-first, narrative, minimal, bold |
+| 3 | Interaction | Hover, click-expand, inline-edit, modal, slide |
+| 4 | Density | Sparse, medium, dense |
+| 5 | Aesthetic | Brand-primary, neutral, high-contrast, monochrome |
+
+Each variation is a self-contained HTML file. Present them in a comparison grid. The user picks the winning elements, then consolidate into a single direction.
 
 ---
 

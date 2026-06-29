@@ -184,6 +184,34 @@ Deliver structured findings with the format below.
 | Terminology consistency | 0 variance | Same concept, same word — always |
 | Error message quality | All errors: what + why + how to fix | Content audit of error states |
 | Empty states present | Every screen type has empty state | Screen inventory check |
+| **AI writing patterns** | **0 hits on the 29-pattern scan** | **Humanizer pass — see below** |
+
+### Humanizer AI-Pattern Scan (29 patterns)
+
+When auditing UX copy, run a dedicated pass against the 29 AI writing patterns.
+Flag every hit with: pattern number, exact text, severity, and rewrite.
+
+**Critical patterns in UX copy (flag as Critical):**
+- #1 Undue emphasis — "serves as", "pivotal", "crucial"
+- #3 -ing tails — "highlighting...", "showcasing..."
+- #7 AI vocabulary — "delve", "intricate", "showcase"
+- #18 Emojis in copy — 🚀💡✅
+- #20 Chatbot artifacts — "I hope this helps!", "Let me know if..."
+- #23 Filler phrases — "In order to", "It is important to note that"
+- #25 Generic conclusions — "The future looks bright"
+
+**Detection process:**
+1. Extract all text strings from the UI (buttons, labels, errors, empty states, help text, headings, body)
+2. Scan against all 29 patterns
+3. For each hit: `| # | Pattern #[N] | Text: "[exact quote]" | Severity | Rewrite: "[fix]" |`
+4. Score: each Critical hit = -3 from content quality dimension score
+5. Report hit count and worst offenders
+
+**Voice quality checks (beyond AI detection):**
+- Sentence rhythm varied or monotoned? (All same length = monotoned)
+- Any opinions or neutral-only? (All neutral = soulless)
+- Any complexity acknowledged? (All simple = shallow)
+- First-person where appropriate? (Never "I" = disembodied)
 
 ---
 

@@ -217,6 +217,81 @@ These are generic AI tells. Never use them:
 - [Why specific word choices matter for this product]
 ```
 
+---
+
+## Humanizer Pass: AI Writing Detection & Removal
+
+When generating or auditing copy, run a dedicated pass against the 29 AI writing patterns
+(from Wikipedia's "Signs of AI writing" + Humanizer project). These are the most common
+LLM tells in text. Catch them before they ship.
+
+### Quick-Scan Checklist (most common in UX copy)
+
+| # | Pattern | Detection | Fix |
+|---|---|---|---|
+| 1 | **Undue emphasis words** | stands/serves as, testament, pivotal, crucial, underscores, reflects broader, vital role | Replace with flat factual statements: "The button saves your work" not "This button serves as a vital tool for preserving your progress" |
+| 3 | **Superficial -ing endings** | highlighting, underscoring, reflecting, contributing to, showcasing, fostering, cultivating | Cut the -ing phrase entirely. The sentence is stronger without it |
+| 4 | **Promotional language** | boasts, vibrant, nestled, breathtaking, stunning, groundbreaking, world-class, renowned | Use neutral adjectives or none. "A town in Gonder" not "A vibrant town nestled in the breathtaking Gonder region" |
+| 7 | **Overused AI vocabulary** | crucial, delve, intricate, pivotal, showcase, testament, underscore, vibrant, landscape, tapestry | Replace with plain alternatives: crucial→important, delve→look into, showcase→show, vibrant→bright |
+| 9 | **Negative parallelisms** | "It's not just X, it's Y", "Not only X, but Y" | State the point directly without the rhetorical frame |
+| 10 | **Rule of three** | "innovation, inspiration, and industry insights"; "fast, simple, and beautiful" | Use 2 or 4 — any number that sounds natural. Three is the AI default |
+| 11 | **Elegant variation** | Cycling synonyms: protagonist→main character→central figure→hero | Pick one term and stick with it. Repetition is clarity |
+| 14 | **Em dash overuse** | — used 3+ times in a paragraph | Replace with commas, periods, or parentheses |
+| 18 | **Emojis in copy** | 🚀 💡 ✅ 🎯 ✨ decorating headings or bullets | Remove all. Write the point in words |
+| 20 | **Chatbot artifacts** | "I hope this helps!", "Let me know if...", "Would you like me to...", "Great question!" | Remove entirely. These are meta-commentary, not content |
+| 22 | **Sycophantic/servile tone** | "You're absolutely right!", "That's an excellent point!", "Great question!" | Acknowledge neutrally or not at all. "The economic factors you mentioned are relevant" |
+| 23 | **Filler phrases** | "In order to", "Due to the fact that", "At this point in time", "It is important to note that" | Cut: "To", "Because", "Now", delete the entire preamble |
+| 25 | **Generic positive conclusions** | "The future looks bright", "Exciting times lie ahead", "This marks a new chapter" | End with a specific, factual next step or no conclusion at all |
+| 28 | **Signposting** | "Let's dive in", "Let's explore", "Here's what you need to know", "Without further ado" | Start the content immediately — don't announce that you're about to start |
+
+### Full 29-Pattern Reference (for deep audits)
+
+1. **Undue emphasis** — stands/serves as, testament, pivotal, crucial, underscores
+2. **Notability inflation** — "cited in NYT, BBC, FT...", "500K followers"
+3. **-ing sentence tails** — highlighting, underscoring, reflecting, contributing to
+4. **Promotional language** — boasts, vibrant, nestled, breathtaking, stunning
+5. **Vague attributions** — "Industry observers", "Experts argue", "Some critics say"
+6. **Formulaic challenges sections** — "Despite its...faces several challenges"
+7. **Overused AI vocabulary** — actually, additionally, crucial, delve, intricate, pivotal, showcase
+8. **Copula avoidance** — serves as, stands as, marks, represents [a], boasts, features
+9. **Negative parallelisms** — "It's not just X, it's Y", "Not only X, but Y"
+10. **Rule of three** — forced triads that could be any number
+11. **Elegant variation** — cycling synonyms to avoid repetition
+12. **False ranges** — "from X to Y" where X and Y aren't on a continuum
+13. **Passive voice + subjectless fragments** — "No configuration file needed"
+14. **Em dash overuse** — 3+ per paragraph
+15. **Boldface overuse** — mechanical bold-on-first-mention of every term
+16. **Inline-header vertical lists** — items starting with bolded headers
+17. **Title case in headings** — "Strategic Negotiations And Global Partnerships"
+18. **Emojis** — 🚀💡✅ in headings or bullets
+19. **Curly quotes** — "..." instead of "..."
+20. **Chatbot artifacts** — "I hope this helps!", "Let me know if...", "Here is a..."
+21. **Knowledge-cutoff disclaimers** — "as of [date]", "based on available information"
+22. **Sycophantic tone** — "Great question!", "You're absolutely right!"
+23. **Filler phrases** — "In order to", "Due to the fact that", "It is important to note that"
+24. **Excessive hedging** — "could potentially possibly be argued that might have some"
+25. **Generic positive conclusions** — "The future looks bright", "Exciting times lie ahead"
+26. **Hyphenated word pair overuse** — cross-functional, data-driven, decision-making
+27. **Persuasive authority tropes** — "The real question is", "At its core", "Fundamentally"
+28. **Signposting** — "Let's dive in", "Here's what you need to know"
+29. **Fragmented headers** — heading followed by one-line restatement before real content
+
+### Process for AI-Pattern Audit
+
+1. Scan the copy against all 29 patterns
+2. For each hit: flag the pattern number, quote the text, propose a rewrite
+3. Run the self-audit: "What makes this text obviously AI-generated?"
+4. Answer with remaining tells, then revise
+5. Inject voice: vary sentence rhythm, add specific opinions, remove the "neutral Wikipedia" tone
+
+### Voice Injection
+Even "clean" copy can feel soulless. Add:
+- **Vary rhythm.** Short punchy sentences. Then longer ones that take their time.
+- **Have opinions.** Don't just report — react. "This is the fastest path" not "This path is recommended."
+- **Acknowledge complexity.** "This is useful but also unsettling" beats "This is useful."
+- **Let some mess in.** Perfect structure feels algorithmic. Tangents are human.
+- **Be specific.** "There's something off about X" not "X is concerning."
+
 ## Handoff
 ```
 [UX WRITING READY]

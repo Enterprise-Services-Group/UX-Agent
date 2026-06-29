@@ -36,11 +36,11 @@ REQUEST → [Phase 1: STRATEGIZE] → [Phase 2: CREATE] → [Phase 3: AUDIT & SH
 | Agent | Key Additions |
 |---|---|
 | ux-strategist | Design Thinking phases, UX research methods (Discover→Explore→Test→Listen), Service Design framework (People/Props/Processes), UX metrics, content quality dimensions |
-| ux-visual | Hallmark 6 disciplines, 20 named themes (from Hallmark + popular-web-designs), 54-system reference library, DESIGN.md integration, expanded anti-slop rules |
+| ux-visual | Hallmark 6 disciplines, 20 named themes, 54-system reference library, DESIGN.md integration, expanded anti-slop rules, **Sketch mode** (2-3 throwaway HTML variants with head-to-head comparison, frontier mode), **Variations mode** (5-axis design space exploration) |
 | ux-interaction | Gesture library (mobile/desktop/keyboard), loading patterns by duration, FLIP technique, expanded feedback systems, View Timeline API, keyboard gesture map |
-| ux-writer | Flesch-Kincaid readability metrics, find→act gap analysis, content freshness, banned words expanded (11 items with replacements), accessibility in writing (WCAG), error message formula |
-| ux-design-system | Google DESIGN.md spec (9-section format with YAML), DTCG export, multi-framework output (React+Tailwind v4, Next.js 15, SwiftUI 6), design review rubric, spec QA gate |
-| ux-quality | Norman's 7 principles, Shneiderman's 8 golden rules, Gestalt 5 laws, WCAG 2.2 AA PRCOA framework, content quality audit (readability/gap/freshness/duplication), service design audit, anti-slop checklist (12 items) |
+| ux-writer | Flesch-Kincaid readability, find→act gap analysis, content freshness, banned words expanded (11 items), WCAG accessibility in writing, error message formula, **Humanizer pass** (29 AI writing patterns detection, quick-scan checklist, full-pattern reference, voice injection) |
+| ux-design-system | Google DESIGN.md spec (9-section YAML), DTCG export, multi-framework output (React+Tailwind v4, Next.js 15, SwiftUI 6), design review rubric, spec QA gate |
+| ux-quality | Nielsen 10 + Norman 7 + Shneiderman 8 + Gestalt 5 laws, WCAG 2.2 AA PRCOA framework, content quality audit (readability/gap/freshness/duplication), service design audit, anti-slop checklist (12 items), **Humanizer AI-pattern scan** (29-pattern detection as content quality dimension) |
 | ux-agent | Specialist capability summary, edge case routing, expanded phase selection, service design pipeline |
 
 ## Design Principles
