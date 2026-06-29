@@ -1,4 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
+  "name": "UX Agent V2 — Orchestra",
+  "pipeline": "3-phase: STRATEGIZE → CREATE → AUDIT & SHIP",
+  "agents": {
+    "ux-agent": "Orchestrator — phase manager, pipeline controller",
+    "ux-strategist": "Strategy, research, IA, personas, journeys, retention",
+    "ux-visual": "Visual design, aesthetics, anti-slop, layout, industry styles",
+    "ux-interaction": "Motion, micro-interactions, gestures, animation systems",
+    "ux-writer": "UX writing, content design, microcopy, voice and tone",
+    "ux-design-system": "Tokens (DTCG), components, handoff, DESIGN.md, multi-framework",
+    "ux-quality": "Usability, WCAG a11y, animation perf, anti-slop, design review"
+  },
   "skills": {}
 }
