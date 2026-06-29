@@ -333,3 +333,35 @@ Score 0–10 per dimension. Report weighted total.
 ```
 [DESIGN SYSTEM READY — Token fidelity: ✓ — Components: N ready]
 ```
+
+---
+
+## Design System Drift Detection
+
+(from pbakaus/impeccable — polish command)
+
+When reviewing an existing feature or component against the design system, identify drift
+and classify its root cause before fixing:
+
+### Discovery Process
+
+1. **Find the design system** — locate documentation, component libraries, style guides,
+   or token definitions. Study core patterns: design principles, color tokens, spacing
+   scale, typography styles, component API, motion conventions.
+
+2. **Note conventions** — how are shared components imported? What spacing scale is used?
+   Which colors come from tokens vs hard-coded values? What flow shapes are used for
+   comparable actions (modal vs full-page, inline vs route, save-on-blur vs explicit submit)?
+
+3. **Identify drift, then name the root cause.** For every deviation:
+
+| Drift Type | Definition | Fix |
+|---|---|---|
+| **Missing token** | The value should exist in the design system but doesn't | Add the token to the system, then use it |
+| **One-off implementation** | A shared component already exists but wasn't used | Replace with the shared component |
+| **Conceptual misalignment** | The feature's flow, IA, or hierarchy doesn't match neighboring features | Rework the flow to match system conventions |
+
+**Rule:** Polish without alignment is decoration on top of drift. It makes the next person's
+job harder. Discovery comes before any other design system work.
+
+If anything about the system is ambiguous, STOP and ASK. Never guess at design system principles.

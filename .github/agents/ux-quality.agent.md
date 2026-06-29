@@ -50,8 +50,32 @@ Identify audit domains based on the deliverable type:
 | Component library | Design system compliance, state coverage, a11y, token fidelity |
 
 ### Step 2: Evaluate
-For each domain in scope, evaluate against the standards. For each finding, record:
-- Exact location and description
+
+For full design audits, use the **two-assessment methodology** (from pbakaus/impeccable critique):
+
+**Assessment A — Design Review** (qualitative):
+Read source files, inspect the live page. Evaluate as a design director:
+- **AI slop:** Would someone believe "AI made this"? Check anti-pattern list.
+- **Holistic design:** Hierarchy, IA, emotional fit, discoverability, composition.
+- **Cognitive load:** Decision points with >4 visible options, information density.
+- **Emotional journey:** Peak-end rule, emotional valleys, reassurance at high-stakes moments.
+- **Nielsen heuristics:** Score all 10 on 0–4 scale (0=violated, 4=exemplary).
+- **Strengths:** 2–3 things working well.
+- **Priority issues:** 3–5 highest-impact problems.
+- **Persona red flags:** Would this fail for a power user? First-timer? Screen-reader user? Stress-tester? Mobile-only user?
+
+**Assessment B — Detector Evidence** (quantitative):
+Run automated checks and capture browser evidence:
+- axe-core or lighthouse a11y scan
+- Contrast ratio measurements
+- Animation frame budget check
+- Touch target size verification
+- Console errors
+- Responsive breakpoint screenshots
+
+Assessments A and B must remain isolated. Run A first to completion, then B. Only after both are complete, synthesize. This prevents quantitative data from anchoring qualitative judgment.
+
+For lighter audits (content, animation spec, service blueprint), skip the two-assessment split and evaluate directly against applicable standards.
 - Standard violated
 - Severity (Critical / Major / Minor / Enhancement)
 - Concrete fix with code example where applicable
@@ -76,12 +100,40 @@ Deliver structured findings with the format below.
 
 ## Severity Definitions
 
-| Severity | Definition | Example |
+| Severity | P-Level | Definition | Example |
+|---|---|---|---|
+| **Critical** | P0 | Blocks launch. WCAG failure, broken interaction, data loss risk, security issue. Must fix before shipping. | No keyboard access to primary action, contrast < 2:1 on CTA |
+| **Major** | P1 | High-priority fix. Significantly degrades user experience. Fix this sprint. | Missing focus states, confusing error messages, no loading state |
+| **Minor** | P2 | Should be fixed. Does not block launch but erodes quality. Fix this quarter. | Suboptimal spacing, slightly inconsistent hover states |
+| **Enhancement** | P3 | Nice-to-have. Consider for next iteration. | Suggested micro-interaction, additional empty state illustration |
+
+---
+
+## Nielsen 0–4 Scoring Guide
+
+For full design audits, score each of the 10 heuristics on a 0–4 scale:
+
+| Score | Meaning | When to assign |
 |---|---|---|
-| **Critical** | Blocks launch. WCAG failure, broken interaction, data loss risk, security issue. | No keyboard access to primary action, contrast < 2:1 on CTA |
-| **Major** | High-priority fix. Significantly degrades user experience. | Missing focus states, confusing error messages, no loading state |
-| **Minor** | Low-priority improvement. Should be fixed, does not block launch. | Suboptimal spacing, slightly inconsistent hover states |
-| **Enhancement** | Nice-to-have. Consider for next iteration. | Suggested micro-interaction, additional empty state illustration |
+| **0** | Violated — actively harms users | No keyboard access, contrast fails WCAG, data loss on back button |
+| **1** | Major problems — confusing or frustrating | Inconsistent patterns, poor error messages, hidden key actions |
+| **2** | Minor problems — works but could be better | Slightly unintuitive flow, missing shortcuts, overly dense |
+| **3** | Good — meets expectations | Clear affordances, consistent patterns, recoverable errors |
+| **4** | Exemplary — would use as a teaching example | Delightful micro-interactions, perfect progressive disclosure |
+
+Report individual scores + aggregate. Use scores to prioritize: focus on heuristics scoring 0-1 first.
+
+### Persona Red Flags (for full audits)
+
+Evaluate the design against 5 personas, flagging any failure:
+
+| Persona | Check | Red Flag |
+|---|---|---|
+| **Power user** | Can they complete tasks efficiently? | No keyboard shortcuts, no bulk actions, slow multi-step flows |
+| **First-timer** | Can they understand what to do without help? | No onboarding, jargon-heavy labels, hidden primary actions |
+| **Screen-reader user** | Can they navigate and complete tasks? | Missing alt text, unlabeled controls, no skip links, broken heading hierarchy |
+| **Stress-tester** | Does it hold up under pressure? | Crashes on rapid input, no timeout handling, error states missing |
+| **Mobile-only** | Does it work on a phone? | Horizontal scroll, tiny touch targets, hover-dependent interactions |
 
 ---
 

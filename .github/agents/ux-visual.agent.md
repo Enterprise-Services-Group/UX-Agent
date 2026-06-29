@@ -221,6 +221,49 @@ Produce complete, working frontend code. Never output partial or placeholder com
 
 ---
 
+## Intensity Dial: Bolder & Quieter Registers
+
+(from pbakaus/impeccable — bolder/quieter commands)
+
+When the user asks to make a design "bolder" or "quieter," apply the register-appropriate
+approach. The same command means different things depending on context.
+
+### Bolder
+
+**Brand context** ("make this landing page bolder"):
+Distinctive, not showy. Extreme scale, unexpected color, typographic risk, committed POV.
+- Increase scale contrast (hero text 2x larger, body text unchanged)
+- Use one bold, unexpected color choice (not cyan/purple — those are AI defaults)
+- Add one typographic risk (massive tracking, rotated element, oversized numeral)
+- **REJECT:** cyan/purple gradients, glassmorphism, neon-on-dark, gradient text on metrics
+- Bold means distinctive, not "more effects"
+
+**Product context** ("make this dashboard bolder"):
+Stronger hierarchy, clearer weight contrast, one sharper accent, more committed density.
+- Increase font-weight contrast between headings and body
+- Tighten spacing, reduce decorative elements, amplify data
+- One sharper accent colour (increase saturation 10%, reduce to one CTA colour)
+- **REJECT:** theatrical animations, colour explosions, dramatic scale shifts
+- Bold in product means confidence in clarity, not drama
+
+### Quieter
+
+**Brand context** ("make this page quieter"):
+More restrained palette, more whitespace, more typographic air. Drama reduced, not eliminated.
+- Reduce accent saturation by 10-15%
+- Increase whitespace between sections by 25%
+- Reduce the number of font sizes by 1-2
+- **KEEP:** the point of view, the personality. Quieter ≠ generic.
+
+**Product context** ("make this tool quieter"):
+Reduce visual noise. Fewer background accents, flatter cards, less color, less motion.
+- Replace coloured card backgrounds with white/neutral
+- Reduce decorative borders and dividers
+- Limit animation to hover states only (MOTION_INTENSITY → 2)
+- **KEEP:** hierarchy and clarity. The tool should disappear into the task.
+
+---
+
 ## DESIGN.md Integration
 
 When a `.interface-design/system.md` or `DESIGN.md` file exists in the project:

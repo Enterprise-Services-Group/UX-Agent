@@ -1,33 +1,36 @@
 {
-  "version": "2.2.0",
-  "name": "UX Agent V2.2 — Orchestra",
+  "version": "2.3.0",
+  "name": "UX Agent V2.3 — Orchestra",
   "pipeline": "3-phase: STRATEGIZE → CREATE → AUDIT & SHIP",
   "agents": {
     "ux-agent": "Orchestrator — phase manager, 3-phase pipeline with sketch/variations/humanizer routes",
     "ux-strategist": "Design Thinking, UX research methods (Discover/Explore/Test/Listen), personas, journeys, service blueprints (People/Props/Processes), IA, UX metrics, content quality dimensions",
-    "ux-visual": "Visual design with Hallmark 6 disciplines, 20 named themes, 54-system reference library, DESIGN.md integration, anti-slop enforcement, Sketch mode (2-3 variants, intake questions, head-to-head, frontier mode), Variations mode (5-axis exploration)",
-    "ux-interaction": "Gesture library (mobile/desktop/keyboard), spring physics, loading patterns, feedback systems, FLIP technique, reduced-motion strategy, animation performance",
-    "ux-writer": "Flesch-Kincaid readability, find→act gap detection, content freshness, voice/tone spectrum, error message formula, banned AI copy catalog, WCAG accessibility in writing, Humanizer pass (29 AI writing patterns, quick-scan checklist, full-pattern reference, voice injection)",
-    "ux-design-system": "DTCG 3-tier token architecture, Google DESIGN.md spec (9 sections), 6-gate component quality, 8 interactive states, fidelity ladder L1–L5, design review rubric, Tailwind/DTCG export, multi-framework output (React+Tailwind v4, Next.js 15, SwiftUI 6)",
-    "ux-quality": "Nielsen 10 heuristics, Norman 7 principles, Shneiderman 8 golden rules, Gestalt 5 laws, WCAG 2.2 AA PRCOA framework, animation performance audit, content quality audit, anti-slop checklist, service design audit, Humanizer AI-pattern scan (29-pattern detection), weighted scoring"
+    "ux-visual": "Visual design with Hallmark 6 disciplines, 20 named themes, 54-system library, DESIGN.md, anti-slop, Sketch mode, Variations mode, Intensity Dial (bolder/quieter registers: brand vs product context)",
+    "ux-interaction": "Gesture library, spring physics, loading patterns, feedback systems, FLIP technique, reduced-motion strategy, animation performance",
+    "ux-writer": "Flesch-Kincaid readability, find→act gap, content freshness, voice/tone, error formula, banned AI copy, WCAG writing, Humanizer pass (29-pattern AI detection, voice injection)",
+    "ux-design-system": "DTCG 3-tier tokens, Google DESIGN.md spec, 6-gate quality, 8 states, fidelity ladder, Tailwind/DTCG export, multi-framework, Design System Drift Detection (missing token/one-off/conceptual misalignment)",
+    "ux-quality": "Nielsen 10 (0-4 scoring) + Norman 7 + Shneiderman 8 + Gestalt 5, WCAG 2.2 AA, Two-Assessment Methodology (A: design review + B: detector evidence), P0-P3 severity, Persona Red Flags (5-persona check), animation perf, content quality, anti-slop, service design, Humanizer AI-pattern scan"
   },
   "standards": [
-    "Nielsen's 10 Usability Heuristics",
+    "Nielsen's 10 Usability Heuristics (0-4 scoring guide)",
     "Norman's 7 Principles of Design",
     "Shneiderman's 8 Golden Rules",
     "Gestalt Laws (5: Proximity, Similarity, Continuity, Closure, Figure-Ground)",
-    "WCAG 2.2 AA (PRCOA: Perceivable, Operable, Understandable, Robust)",
-    "Design Thinking (Empathize → Define → Ideate → Prototype → Test)",
+    "WCAG 2.2 AA (PRCOA framework)",
+    "Design Thinking (5 phases)",
     "Service Design (People + Props + Processes)",
-    "Double Diamond (Discover → Define → Develop → Deliver)",
+    "Double Diamond",
     "DTCG (Design Tokens Community Group)",
-    "Google DESIGN.md spec (npm: @google/design.md)",
-    "Hallmark Design System (6 disciplines, 20 themes, anti-slop gates)",
+    "Google DESIGN.md spec",
+    "Hallmark Design System (6 disciplines, 20 themes)",
     "Flesch-Kincaid readability",
-    "UX Research Method Selection (Discover → Explore → Test → Listen)",
-    "Sketch Design Methodology (GSD: intake → variants → head-to-head → frontier)",
-    "Prototype Variations (5-axis design space exploration)",
-    "Humanizer AI Writing Detection (29 patterns, Wikipedia AI Cleanup)"
+    "UX Research Method Selection (Discover→Explore→Test→Listen)",
+    "Sketch Design Methodology (GSD)",
+    "Prototype Variations (5-axis)",
+    "Humanizer AI Writing Detection (29 patterns)",
+    "Impeccable Critique Methodology (two-assessment, P0-P3, persona red flags)",
+    "Impeccable Intensity Dial (bolder/quieter registers: brand vs product)",
+    "Impeccable Polish (design system discovery, drift detection)"
   ],
   "skills": {}
 }
