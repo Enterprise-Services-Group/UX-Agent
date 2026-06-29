@@ -1,15 +1,30 @@
 {
-  "version": 2,
-  "name": "UX Agent V2 — Orchestra",
+  "version": 2.1,
+  "name": "UX Agent V2.1 — Orchestra",
   "pipeline": "3-phase: STRATEGIZE → CREATE → AUDIT & SHIP",
   "agents": {
-    "ux-agent": "Orchestrator — phase manager, pipeline controller",
-    "ux-strategist": "Strategy, research, IA, personas, journeys, retention",
-    "ux-visual": "Visual design, aesthetics, anti-slop, layout, industry styles",
-    "ux-interaction": "Motion, micro-interactions, gestures, animation systems",
-    "ux-writer": "UX writing, content design, microcopy, voice and tone",
-    "ux-design-system": "Tokens (DTCG), components, handoff, DESIGN.md, multi-framework",
-    "ux-quality": "Usability, WCAG a11y, animation perf, anti-slop, design review"
+    "ux-agent": "Orchestrator — phase manager, pipeline controller, 3-phase execution with refinement loops",
+    "ux-strategist": "Design Thinking, UX research methods (Discover/Explore/Test/Listen), personas, journeys, service blueprints (People/Props/Processes), IA, UX metrics, content quality dimensions",
+    "ux-visual": "Visual design with Hallmark 6 disciplines, 20 named themes, 54-system reference library, industry aesthetics, DESIGN.md integration, anti-slop enforcement",
+    "ux-interaction": "Gesture library (mobile/desktop/keyboard), spring physics, loading patterns, feedback systems, FLIP technique, reduced-motion strategy, animation performance",
+    "ux-writer": "Flesch-Kincaid readability, find→act gap detection, content freshness, voice/tone spectrum, error message formula, banned AI copy catalog, WCAG accessibility in writing",
+    "ux-design-system": "DTCG 3-tier token architecture, Google DESIGN.md spec (9 sections), 6-gate component quality, 8 interactive states, fidelity ladder L1–L5, design review rubric, Tailwind/DTCG export, multi-framework output (React+Tailwind v4, Next.js 15, SwiftUI 6)",
+    "ux-quality": "Nielsen 10 heuristics, Norman 7 principles, Shneiderman 8 golden rules, Gestalt 5 laws, WCAG 2.2 AA PRCOA framework, animation performance audit, content quality audit, anti-slop checklist, service design audit, weighted scoring"
   },
+  "standards": [
+    "Nielsen's 10 Usability Heuristics",
+    "Norman's 7 Principles of Design",
+    "Shneiderman's 8 Golden Rules",
+    "Gestalt Laws (5: Proximity, Similarity, Continuity, Closure, Figure-Ground)",
+    "WCAG 2.2 AA (PRCOA: Perceivable, Operable, Understandable, Robust)",
+    "Design Thinking (Empathize → Define → Ideate → Prototype → Test)",
+    "Service Design (People + Props + Processes)",
+    "Double Diamond (Discover → Define → Develop → Deliver)",
+    "DTCG (Design Tokens Community Group)",
+    "Google DESIGN.md spec (npm: @google/design.md)",
+    "Hallmark Design System (6 disciplines, 20 themes, anti-slop gates)",
+    "Flesch-Kincaid readability",
+    "UX Research Method Selection (Discover → Explore → Test → Listen)"
+  ],
   "skills": {}
 }
